@@ -1,0 +1,110 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.login-form ts-input {
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-footer {
+  margin: 0.5rem 0 1.25rem;
+  gap: 0.75rem;
+}
+
+.forgot-link {
+  font-size: 0.875rem;
+  color: #6c757d;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.forgot-link:hover {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+/* Align with screenshot spacing and sizing */
+.login-form {
+  width: 100%;
+}
+
+.login-form ts-checkbox {
+  margin-right: 0.5rem;
+}
+
+/* Ensure button spans full width and has height similar to screenshot */
+:host ::ng-deep ts-button .btn,
+:host ::ng-deep ts-button button {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+}
+
+/* Inputs look like large fields from screenshot */
+:host ::ng-deep ts-input .form-control,
+:host ::ng-deep ts-input input {
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  padding: 0 12px;
+}
+
+/* Labels a bit bolder, tighter spacing like screenshot */
+:host ::ng-deep ts-input label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+/* Button primary color to match screenshot */
+:host ::ng-deep ts-button .btn-primary,
+:host ::ng-deep ts-button button.btn-primary {
+  background-color: #1e63e9;
+  border-color: #1e63e9;
+}
+
+:host ::ng-deep ts-button .btn-primary:hover,
+:host ::ng-deep ts-button button.btn-primary:hover {
+  background-color: #1754c6;
+  border-color: #1754c6;
+}
+
+/* Navigation links styling */
+.form-navigation {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.register-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.register-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.register-link {
+  color: #1e63e9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.register-link:hover {
+  color: #1754c6;
+  text-decoration: none;
+}

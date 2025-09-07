@@ -1,0 +1,24 @@
+<form [formGroup]="registerForm" novalidate class="register-form">
+  <!-- Username Input -->
+  <ts-input [config]="textInputUserNameConfig"></ts-input>
+
+  <!-- Email Input -->
+  <ts-input [config]="textInputEmailConfig"></ts-input>
+
+  <!-- Password Input -->
+  <ts-input [config]="textInputPasswordConfig"></ts-input>
+
+  <!-- Phone Number Input -->
+  <ts-input [config]="textInputPhoneConfig"></ts-input>
+
+  <!-- Submit Button -->
+  <ts-button [config]="registerButtonConfig"></ts-button>
+
+  <!-- Navigation Links -->
+  <div class="form-navigation">
+    <div class="login-section">
+      <span class="login-text">Already have an account?</span>
+      <a routerLink="/auth/login" class="login-link">Sign in</a>
+    </div>
+  </div>
+</form>

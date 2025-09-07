@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm" novalidate class="login-form">
+  <!-- Username Input -->
+  <ts-input [config]="textInputUserNameConfig"></ts-input>
+  <!-- <div *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid"
+       class="error-text">
+    Username is required.
+  </div> -->
+
+  <!-- Password Input -->
+  <ts-input [config]="textInputPasswordConfig"></ts-input>
+
+  <!-- Checkbox and Forgot Link -->
+  <div class="form-footer d-flex align-items-center justify-content-between mt-2">
+    <ts-checkbox [config]="rememberMeCheckboxConfig"></ts-checkbox>
+    <a class="forgot-link" routerLink="/auth/forgot-password">Forgot your password?</a>
+  </div>
+
+  <!-- Submit Button -->
+  <ts-button [config]="loginButtonConfig"></ts-button>
+
+  <!-- Navigation Links -->
+  <div class="form-navigation">
+    <div class="register-section">
+      <span class="register-text">Don't have an account?</span>
+      <a routerLink="/auth/register" class="register-link">Sign up</a>
+    </div>
+  </div>
+</form>

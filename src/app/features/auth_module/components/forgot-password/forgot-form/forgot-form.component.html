@@ -1,0 +1,15 @@
+<form [formGroup]="forgotForm" novalidate class="forgot-form">
+  <!-- Email Input -->
+  <ts-input [config]="textInputEmailConfig"></ts-input>
+
+  <!-- Submit Button -->
+  <ts-button [config]="forgotButtonConfig"></ts-button>
+
+  <!-- Back to Login Link -->
+  <div class="back-to-login">
+    <a routerLink="/auth/login" class="back-link">
+      <i class="fas fa-arrow-left"></i>
+      Back to Login
+    </a>
+  </div>
+</form>
