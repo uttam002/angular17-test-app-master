@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+.greatings-container {
+  border: 2px solid #b1aaaa;
+}
+
+.header {
+  display: flex;
+  background: #f5f5f5;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #000;
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+

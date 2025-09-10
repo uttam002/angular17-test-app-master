@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="row border-bottom mb-3 pb-3">
+    <div class="sub-title">Project</div>
+    <div class="title"><h2>Manage Project</h2></div>
+  </div>
+  <div class="row">
+    <form [formGroup]="filterationForm">
+      <div class="row d-flex justify-content-between mb-3 align-items-center flex-nowrap">
+        <ts-input [config]="textInputProjectNameConfig" class="col-12 col-sm-6 col-md-3"></ts-input>
+        <ts-dropdown [config]="projectTypeDropdownConfig" class="col-12 col-sm-6 col-md-3"></ts-dropdown>
+        <ts-dropdown [config]="technologyDropdownConfig" class="col-12 col-sm-6 col-md-3"></ts-dropdown>
+        <ts-dropdown [config]="statusDropdownConfig" class="col-12 col-sm-6 col-md-3"></ts-dropdown>
+      </div>
+      <div class="row d-flex justify-content-between mb-3 align-items-center flex-nowrap">
+        <ts-dropdown [config]="projectModeDropdownConfig" class="col-12 col-sm-6 col-md-3"></ts-dropdown>
+        <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-start gap-3 align-items-center w-75">
+          <ts-checkbox [config]="showOnlyCMMICheckboxConfig" class="mt-4"></ts-checkbox>
+          <ts-button [config]="searchButtonConfig"></ts-button>
+          <ts-button [config]="resetButtonConfig"></ts-button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

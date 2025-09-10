@@ -1,0 +1,33 @@
+<div class="counter-test">
+  <h2>Counter Animation Test</h2>
+
+  <div class="test-section">
+    <h3>Basic Test</h3>
+    <p>Counter from 0 to 100:</p>
+    <div class="test-counter" appCounterAnimation="100"></div>
+  </div>
+
+  <div class="test-section">
+    <h3>Currency Test</h3>
+    <p>Price animation:</p>
+    <div class="test-counter currency"
+         appCounterAnimation="999.99"
+         [counterOptions]="{ prefix: '$', decimalPlaces: 2 }">
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h3>Interactive Test</h3>
+    <p>Enter a number to animate to:</p>
+    <input
+      type="number"
+      [(ngModel)]="testValue"
+      placeholder="Enter number"
+      class="test-input">
+    <button (click)="triggerAnimation()" class="test-button">Animate</button>
+    <div class="test-counter interactive"
+         appCounterAnimation="{{testValue}}"
+         [counterOptions]="{ duration: 2000, formatNumber: true }">
+    </div>
+  </div>
+</div>

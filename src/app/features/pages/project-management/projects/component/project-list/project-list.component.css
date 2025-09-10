@@ -1,0 +1,104 @@
+.project-name-link {
+  color: #1976d2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hover-popup {
+  position: fixed;
+  z-index: 2000;
+  min-width: 180px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  white-space: pre-line;
+}
+
+.popup-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.popup-line {
+  color: #444;
+  font-size: 12px;
+}
+:host ::ng-deep ts-data-grid {
+  display: block;
+  width: 100%;
+}
+
+.type-badge {
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+  background: #e0e0e0;
+  color: #333;
+}
+
+/* Monthly pill */
+.type-badge.monthly {
+  background: #fce4ec;
+  color: #ad1457;
+}
+
+/* Hourly pill */
+.type-badge.hourly {
+  background: #e1f5fe;
+  color: #0277bd;
+}
+/* Fixed pill */
+.type-badge.fixed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+/* status badge pill box */
+.status-badge{
+  padding: 12px 6px;
+  border-radius: 6px;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.status-badge.in-progress {
+  background: #b5c015;
+  color: #000000;
+}
+.status-badge.completed {
+  background: #4caf50;
+  color: #000000;
+}
+.status-badge.on-hold {
+  background: #ff9800;
+  color: #000000;
+}
+.status-badge.unassigned {
+  background: #9e9e9e;
+  color: #000000;
+}
+.status-badge.dev-completed {
+  background: #f44336;
+  color: #000000;
+}
+.cutom-tooltip-template{
+  width: 200px;
+  border: 1px solid #444444bb;
+}
+.cutom-tooltip-template .tooltip-title{
+  font-weight: 600;
+  padding: 1.5rem 1.375rem;
+  border-bottom: 0.8px solid #444;
+}
+.cutom-tooltip-template .tooltip-data{
+  padding: 16px;
+  font-size: 1.5rem;
+}

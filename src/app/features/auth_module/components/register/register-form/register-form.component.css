@@ -4,56 +4,10 @@
 }
 
 .register-form ts-input {
-  margin-bottom: 1rem;
+  margin-bottom: 15rem;
 }
-
-.error-text {
-  color: #d9534f;
-  font-size: 0.85rem;
-  margin-top: -0.25rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Align with screenshot spacing and sizing */
 .register-form {
   width: 100%;
-}
-
-/* Ensure button spans full width and has height similar to screenshot */
-:host ::ng-deep ts-button .btn,
-:host ::ng-deep ts-button button {
-  width: 100%;
-  height: 44px;
-  border-radius: 8px;
-}
-
-/* Inputs look like large fields from screenshot */
-:host ::ng-deep ts-input .form-control,
-:host ::ng-deep ts-input input {
-  height: 44px;
-  border-radius: 8px;
-  border: 1px solid #d9d9d9;
-  padding: 0 12px;
-}
-
-/* Labels a bit bolder, tighter spacing like screenshot */
-:host ::ng-deep ts-input label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-
-/* Button primary color to match screenshot */
-:host ::ng-deep ts-button .btn-primary,
-:host ::ng-deep ts-button button.btn-primary {
-  background-color: #1e63e9;
-  border-color: #1e63e9;
-}
-
-:host ::ng-deep ts-button .btn-primary:hover,
-:host ::ng-deep ts-button button.btn-primary:hover {
-  background-color: #1754c6;
-  border-color: #1754c6;
 }
 
 /* Navigation links styling */
@@ -72,14 +26,14 @@
 
 .login-text {
   color: #6c757d;
-  font-size: 0.9rem;
+  font-size: 1.375rem;
 }
 
 .login-link {
   color: #1e63e9;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1.375rem;
   transition: color 0.2s ease;
 }
 

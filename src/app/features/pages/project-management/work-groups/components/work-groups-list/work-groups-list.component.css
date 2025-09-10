@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+::ng-deep .mat-tab-label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #555;
+}
+
+::ng-deep .mat-tab-label-active {
+  color: #1976d2; /* blue for active tab */
+}
+
+.tab-content {
+  padding: 12px;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+}

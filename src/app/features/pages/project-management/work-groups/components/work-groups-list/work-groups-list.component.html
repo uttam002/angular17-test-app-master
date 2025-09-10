@@ -1,0 +1,20 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Active Work Groups" >
+    <div class="tab-content">
+      <!-- Grid for Active Work Groups will go here -->
+      <ts-data-grid [config]="activeWorkGroupsDataGridConfig"></ts-data-grid>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Archived Work Groups">
+    <div class="tab-content">
+      <!-- Grid for Archived Work Groups will go here -->
+      <ts-data-grid [config]="archivedWorkGroupsDataGridConfig"></ts-data-grid>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+<ng-template #statusesTemplate let-statuses="data.statuses">
+  <app-status-bar [statuses]="statuses"></app-status-bar>
+</ng-template>

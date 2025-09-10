@@ -1,0 +1,34 @@
+<div class="container-fluid gap-5 d-flex flex-column">
+  <div class="card-grid row d-flex justify-content-between">
+     <!-- Work Log -->
+  <test-generic-card [config]="workLogConfig" class="col-sm-6 col-md-3 "></test-generic-card>
+
+  <!-- Monthly Leaves -->
+  <test-generic-card [config]="monthlyLeavesConfig" class="col-sm-6 col-md-3 "></test-generic-card>
+
+  <!-- Quick Links -->
+  <test-generic-card [config]="quickLinksConfig" class="col-sm-6 col-md-3 "></test-generic-card>
+
+  <!-- News & Events -->
+  <test-generic-card [config]="newsConfig" class="col-sm-6 col-md-3 "></test-generic-card>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <test-projects-data></test-projects-data>
+    </div>
+    <div class="col-md-6">
+      <test-work-items></test-work-items>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-between">
+    <div class="col-md-4">
+      <test-greatings></test-greatings>
+    </div>
+    <div class="col-md-4">
+      <test-work-groups></test-work-groups>
+    </div>
+    <div class="col-md-4 calender-container">
+      <test-training-calender></test-training-calender>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.mat-mdc-dialog-container{
+  .mdc-dialog__container{
+    .mat-mdc-dialog-surface{
+      padding: 2rem;
+      box-shadow: none;
+      background-color: var(--modal-bg);
+      &:has(.whishes-modal-wrapper){
+        padding: 0;
+      }
+    }
+  }
+  ts-confirm-dialog, ts-message-box-dialog{
+    .mdc-dialog__title{
+      padding: 0 0 1.6rem;
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1;
+      &::before{
+        height: 0;
+      }
+    }
+    .mat-mdc-dialog-title {
+      color: var(--text-color)
+    }
+    .mat-mdc-dialog-content {
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.3;
+    }
+    .mat-mdc-dialog-actions {
+      padding: 2.6rem 0 0;
+      justify-content: flex-end;
+      ts-button{
+        &+ts-button{
+          margin-left: 1rem;
+        }
+        .mat-mdc-button-persistent-ripple {
+          &::before {
+            background-color: var(--modal-ripple-base);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  .dark-theme & {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}

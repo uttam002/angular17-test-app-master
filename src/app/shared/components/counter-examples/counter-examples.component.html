@@ -1,0 +1,95 @@
+<div class="counter-examples">
+  <h2>Counter Animation Examples</h2>
+
+  <!-- Basic Usage -->
+  <div class="example-card">
+    <h3>Basic Usage</h3>
+    <p>Simple counter from 0 to 1000:</p>
+    <div class="counter-value" appCounterAnimation="1000"></div>
+  </div>
+
+  <!-- With Custom Duration -->
+  <div class="example-card">
+    <h3>Custom Duration (5 seconds)</h3>
+    <p>Slower animation for dramatic effect:</p>
+    <div class="counter-value" appCounterAnimation="5000" [counterOptions]="{ duration: 5000 }"></div>
+  </div>
+
+  <!-- Currency Format -->
+  <div class="example-card">
+    <h3>Currency Format</h3>
+    <p>Animated price with dollar sign:</p>
+    <div class="counter-value currency"
+         appCounterAnimation="1299.99"
+         [counterOptions]="{
+           duration: 3000,
+           prefix: '$',
+           decimalPlaces: 2,
+           formatNumber: true
+         }">
+    </div>
+  </div>
+
+  <!-- Percentage -->
+  <div class="example-card">
+    <h3>Percentage</h3>
+    <p>Animated percentage with decimal:</p>
+    <div class="counter-value percentage"
+         appCounterAnimation="87.5"
+         [counterOptions]="{
+           duration: 2000,
+           suffix: '%',
+           decimalPlaces: 1
+         }">
+    </div>
+  </div>
+
+  <!-- Large Number with Separators -->
+  <div class="example-card">
+    <h3>Large Number with Separators</h3>
+    <p>Formatted large number with commas:</p>
+    <div class="counter-value large"
+         appCounterAnimation="1234567"
+         [counterOptions]="{
+           duration: 4000,
+           separator: ',',
+           formatNumber: true
+         }">
+    </div>
+  </div>
+
+  <!-- Different Easing Effects -->
+  <div class="example-card">
+    <h3>Easing Effects</h3>
+    <div class="easing-grid">
+      <div class="easing-item">
+        <label>Linear</label>
+        <div class="counter-value small"
+             appCounterAnimation="100"
+             [counterOptions]="{ easing: 'linear', duration: 2000 }">
+        </div>
+      </div>
+      <div class="easing-item">
+        <label>Ease In</label>
+        <div class="counter-value small"
+             appCounterAnimation="100"
+             [counterOptions]="{ easing: 'ease-in', duration: 2000 }">
+        </div>
+      </div>
+      <div class="easing-item">
+        <label>Ease Out</label>
+        <div class="counter-value small"
+             appCounterAnimation="100"
+             [counterOptions]="{ easing: 'ease-out', duration: 2000 }">
+        </div>
+      </div>
+      <div class="easing-item">
+        <label>Ease In-Out</label>
+        <div class="counter-value small"
+             appCounterAnimation="100"
+             [counterOptions]="{ easing: 'ease-in-out', duration: 2000 }">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

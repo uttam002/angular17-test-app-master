@@ -1,0 +1,146 @@
+.counter-demo {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.counter-demo h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.demo-section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.demo-section h3 {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #1e63e9;
+  padding-bottom: 0.5rem;
+}
+
+.counter-display {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.counter-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1e63e9;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+}
+
+.counter-number.currency {
+  color: #28a745;
+}
+
+.counter-number.percentage {
+  color: #dc3545;
+}
+
+.counter-number.interactive {
+  color: #6f42c1;
+  font-size: 2.5rem;
+}
+
+.easing-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.easing-item {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.easing-item label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.easing-item .counter-number {
+  font-size: 2rem;
+  color: #1e63e9;
+}
+
+.interactive-demo {
+  text-align: center;
+}
+
+.number-input {
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-right: 1rem;
+  width: 200px;
+}
+
+.number-input:focus {
+  outline: none;
+  border-color: #1e63e9;
+}
+
+.update-btn {
+  padding: 0.75rem 1.5rem;
+  background: #1e63e9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.update-btn:hover {
+  background: #1754c6;
+}
+
+.update-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+  .counter-demo {
+    padding: 1rem;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .easing-demo {
+    grid-template-columns: 1fr;
+  }
+
+  .interactive-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .number-input {
+    margin-right: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+}

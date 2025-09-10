@@ -1,10 +1,8 @@
-<div class="mainBg">
-  <div
-    class="container d-flex min-vh-100 align-items-center justify-content-center">
-    <div class="flipContainer w-100" id="flipContainer">
-      <div class="flipper">
-        <router-outlet></router-outlet>
-      </div>
+<!-- main-layout.component.html -->
+<div class="mainBg" [ngStyle]="{'background-image': 'url(' + bgImage + ')'}">
+  <div class="container d-flex min-vh-100 align-items-center justify-content-center">
+    <div class="w-100">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

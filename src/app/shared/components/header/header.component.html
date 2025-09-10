@@ -1,0 +1,83 @@
+<mat-toolbar class="site-header">
+  <div class="container-fluid">
+    <div class="header-inner-wrapper">
+      <div class="header-left-block">
+        <div class="header-left-block-inner">
+          <div class="logo-block">
+            <a routerLink="/dashboard">
+              <img class="light-theme-visible" src="./assets/images/workspace_logo.png" alt="Workspace Logo" />
+              <img class="dark-theme-visible" src="./assets/images/workspace_logo.png" alt="Workspace Logo" />
+            </a>
+          </div>
+          <div class="hamburger-ic" (click)="toggleSidebar()">
+            <div class="icon-wrap">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-right-block">
+        <div class="header-right-block-inner">
+          <div class="notification-block">
+            <button mat-button class="icon-btn" title="Notification">
+              <em>
+                <img src="./assets/images/notification-icon.svg" alt="Notification" />
+              </em>
+              <span class="counter"></span>
+            </button>
+            <button mat-button class="icon-btn" (click)="toggleDarkMode()" #tooltip="matTooltip"
+              [matTooltip]="tooltipContent" matTooltipClass="custom-tooltip centered profile-tooltip"
+              [matTooltipPosition]="'below'">
+              <em>
+                <img src="./assets/images/dark-mode-icon.svg" alt="Dark Mode Icon" class="light" />
+                <img src="./assets/images/light-mode-icon.svg" alt="Light Mode Icon" class="dark" />
+              </em>
+            </button>
+          </div>
+          <div class="menu-block">
+            <div class="menu-inner-wrapper">
+              <div class="menu-wrapper">
+                <div mat-button class="profile-name" [matMenuTriggerFor]="menu" (click)="openMenu(0)"
+                  #tooltip="matTooltip" matTooltip="Uttam Bhuva" matTooltipClass="custom-tooltip profile-tooltip"
+                  [matTooltipPosition]="'below'">
+                  <img src="./assets/images/profile-img.svg" alt="Uttam's Profile" class="profile-img" />
+                </div>
+                <mat-menu #menu="matMenu" class="menu-main">
+                  <div class="profile-menu" (click)="$event.stopPropagation();$event.preventDefault();">
+                    <div class="profile-icon">
+                      <img src="./assets/images/profile-img.svg" alt="Uttam's Profile" class="profile-img" />
+                    </div>
+                    <div class="profile-info">
+                      <div class="profile-name">Uttam Bhuva</div>
+                      <div class="profile-email">
+                        uttam.bhuva&#64;tatvasoft.com
+                      </div>
+                    </div>
+                  </div>
+                  <button mat-button type="button" title="My Profile">
+                    <em><img src="./assets/images/menu-my-profile-icon.svg" alt="My Profile" /></em>
+                    My Profile
+                  </button>
+                  <button mat-button type="button" title="Widgets Settings">
+                    <em><img src="./assets/images/menu-widget-settings-icon.svg" alt="Widgets Settings" /></em>
+                    Widgets Settings
+                  </button>
+                  <button mat-button type="button" title="Change Password">
+                    <em><img src="./assets/images/menu-change-password-icon.svg" alt="Change password" /></em>
+                    Change Password
+                  </button>
+                  <button mat-button type="button" title="Logout">
+                    <em><img src="./assets/images/menu-logout-icon.svg" alt="Logout" /></em>
+                    Logout
+                  </button>
+                </mat-menu>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

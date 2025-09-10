@@ -1,0 +1,53 @@
+.site-footer {
+  padding: 1rem 2rem 0.6rem;
+  background-color: var(--footer-bg);
+  .footer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include bp(sm-max) {
+      flex-direction: column;
+    }
+    .logo-block {
+      height: 3.1rem;
+      img {
+        width: 12rem;
+      }
+    }
+    .text-block {
+      display: flex;
+      align-items: center;
+      @include bp(xxs-max) {
+        flex-wrap: wrap;
+        text-align: center;
+        flex-direction: column;
+      }
+      li {
+        position: relative;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        color: var(--footer-color);
+        + li {
+          margin-left: 1.5rem;
+          @include bp(xxs-max) {
+            margin-left: 0;
+            margin-top: 0.3rem;
+          }
+          &::before {
+            position: absolute;
+            content: " ";
+            top: 0.3rem;
+            left: -0.75rem;
+            height: calc(100% - 0.5rem);
+            width: 0.8px;
+            background-color: transparent;
+            border-right: 1px solid var(--footer-color);
+            @include bp(xxs-max) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<div class="sidebar-inner">
+  <div class="nav-list-wrapper">
+    <ng-scrollbar #scrollable track="all" pointerEventsMethod="scrollbar" visibility="hover"
+      class="ng-scrollbar-wrapper">
+      <ul class="nav-list main-list">
+        <li class="nav-list-item" routerLinkActive="current-page" [routerLinkActiveOptions]="{exact: true}">
+          <a mat-button [routerLink]="['/u']">
+            <em class="icon"><img src="./assets/images/sidebar-get-started.svg" alt="Dashboard"></em>
+            <em class="text">Dashboard</em>
+          </a>
+        </li>
+        <li class="nav-list-item has-menu" routerLinkActive="current-page">
+          <mat-accordion class="nav-dropdown" multi="true">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header class="panel-title">
+                <mat-panel-title>
+                  <em class="icon"><img src="./assets/images/sidebar-myworkspace-icon.svg" alt="Dashboard"></em>
+                  <em class="text">Project</em>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul class="nav-list sub-nav-list">
+                <li class="nav-list-item" routerLinkActive="current-page">
+                  <a mat-button [routerLink]="['project-management/projects']">Manage</a>
+                </li>
+                <li class="nav-list-item" routerLinkActive="current-page">
+                  <a mat-button [routerLink]="['project-management/work-groups']">Work Groups</a>
+                </li>
+                <li class="nav-list-item" routerLinkActive="current-page">
+                  <a mat-button [routerLink]="['project-management/work-backlogs']">Work Backlog</a>
+                </li>
+                <li class="nav-list-item has-menu" routerLinkActive="current-page">
+                  <mat-accordion class="nav-dropdown" multi="true">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header class="panel-title">
+                        <mat-panel-title>
+                          <em class="icon"></em>
+                          <em class="text">Work Item</em>
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <ul class="nav-list sub-nav-list">
+                        <li class="nav-list-item" routerLinkActive="current-page">
+                          <a mat-button [routerLink]="['project-management/work-item/self']">Self</a>
+                        </li>
+
+                      </ul>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </li>
+                <li class="nav-list-item has-menu" routerLinkActive="current-page">
+                  <mat-accordion class="nav-dropdown" multi="false">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header class="panel-title">
+                        <mat-panel-title>
+                          <em class="icon"></em>
+                          <em class="text">Work Sheet</em>
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <ul class="nav-list sub-nav-list">
+                        <li class="nav-list-item" routerLinkActive="current-page">
+                          <a mat-button [routerLink]="['project-management/work-sheet/self']">Self</a>
+                        </li>
+
+                      </ul>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </li>
+      </ul>
+    </ng-scrollbar>
+  </div>
+</div>

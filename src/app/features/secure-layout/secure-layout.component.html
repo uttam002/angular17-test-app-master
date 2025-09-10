@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <app-header (ToggleSidebar)="toggleSidebar()"></app-header>
+    <mat-sidenav-container class="sidebar-outer-container">
+        <mat-sidenav color="primary" #sidenav [mode]="sidebarMode()" [opened]="isSidebarOpened()" [autoFocus]="false"
+            class="sidebar-outer-wrapper">
+            <app-sidebar></app-sidebar>
+            <div class="sidebar-overlay" (click)="closeSidebar()"></div>
+        </mat-sidenav>
+        <mat-sidenav-content class="page-wrapper">
+            <div class="page-content">
+                <div class="page-wrapper-outer">
+                    <div class="page-wrapper-inner">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+                <app-footer></app-footer>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

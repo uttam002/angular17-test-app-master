@@ -1,1 +1,12 @@
-<p>info-pannel works!</p>
+<owl-carousel-o [options]="carouselOptions" (translated)="onSlideChange($event)">
+  <ng-container *ngFor="let img of images; let i = index">
+    <ng-template carouselSlide>
+      <div class="carousel-slide" [style.background-image]="'url(' + img + ')'">
+        <div class="carousel-content">
+          <h2>{{ titles[i] }}</h2>
+          <p>{{ descriptions[i] }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>

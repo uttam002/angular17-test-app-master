@@ -22,9 +22,20 @@ export class ForgotFormComponent {
   }
 
   textInputEmailConfig: TsInputConfig = {
+    id: 'email',
     type: TsInputType.Email,
     formControlName: 'email',
-    label: 'Email Address'
+    label: 'Email',
+    placeholder: 'Enter your email',
+    appearance: 'outline',
+    customValidationMessage: (errorType: string) => {
+      switch (errorType) {
+        case 'required': return 'Email is required';
+        case 'email': return 'Enter a valid email address';
+        default: return 'Invalid email';
+      }
+    }
+
   }
 
   forgotButtonConfig: TsButtonConfig = {

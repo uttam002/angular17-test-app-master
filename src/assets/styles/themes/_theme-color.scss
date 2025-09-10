@@ -1,0 +1,300 @@
+$app-primary-color: #1b66e7;
+$app-secondary-color: #f5f5f8;
+
+$white: #ffffff;
+$primary: #1b66e7;
+$black: #000000;
+
+$primary-palette: (
+  main: $app-primary-color,
+  contrast: (
+    main: $white,
+  ),
+);
+
+$accent-palette: (
+  main: $app-secondary-color,
+  contrast: (
+    main: $black,
+  ),
+);
+
+// variables
+$primaryFontFamily: "Segoe UI", Arial, sans-serif;
+$textColor: #000;
+$textSecondaryColor: #8f8f8f;
+$textSecondaryDarkColor: #a2a0a2;
+$borderColor: #e9ebec;
+$darkBorderColor: #3d3d3f;
+$textColorDark: #fff;
+$textBorderColorDark: #959595;
+$formfieldBorder: #dcdfe4;
+$formfieldDarkBorder: #5c5b5c;
+$formfieldDarkBackground: #2a2b2d;
+$formfieldHoverBg: #f7f8f9;
+$formfieldHoverBgDark: #26272a;
+$formfieldBgDark: #191a1c;
+$scrollbarBg: #d9d9d9;
+$scrollbarThumb: #b3b3b3;
+$darkScrollbarThumb: rgba(74, 74, 78, 0.75);
+$scrollbarTrack: #e9ecef;
+$darkScrollbarTrack: rgba(25, 26, 28, 0.95);
+$bodyScrollbarThumb: rgba(0, 0, 0, 0.1);
+$bodyScrollbarTrack: #f7f8f9;
+$bodyScrollbarThumbDark: #343638;
+$bodyScrollbarTrackDark: #212121;
+$radioInnerCircle: #fff;
+$toggleMenuColor: #333333;
+$darkToggleMenuColor: #c5c5d0;
+$errorColor: #f80808;
+$iconBtnBgColor: #f1f2f4;
+$iconBtnHeaderHover: #efeff0;
+$datepickerborder: #0b2e58;
+$datepickerhoverdark: #3d3e40;
+$datePickerheaderDark: #3a3b3c;
+$datepickerlabel: #828282;
+$datepickerarrowcolor: #6d6e6f;
+$datepickertxtcolor: rgba(0, 0, 0, 0.87);
+$datepickertxtdisablecolor: rgba(0, 0, 0, 0.38);
+$sidebarOverlay: rgba(0, 0, 0, 0.32);
+$datepickertxtdisablecolordark: rgba(255, 255, 255, 0.38);
+$formfieldBorderDark: #4a4a4e;
+$tooltipBgDark: #4b4d4f;
+$sidebarHover: #dae9ff;
+$primaryBtnHoverBg: #3666c8;
+$sidebarTextColorDark: #e0e0e6;
+$sidebarHoverDark: rgba(255, 255, 255, 0.08);
+$switchBg: #e7e7e8;
+$primaryBtnHover: #eef5ff;
+$tabFocused: rgba(0, 0, 0, 0.04);
+$tabFocusedDark: rgba(0, 0, 0, 0.12);
+$chipBorder: #ebebeb;
+$chipBorderDark: #6c6c6e;
+$dropdownCheckmark: #fff;
+$infoToastBg: #d1edff;
+$warningToast: #d88c14;
+$warningToastBg: #fff1db;
+$successToastText: #d7ffd7;
+$successToastBg: #0c5718;
+$fillTextboxBorder: #f5f5f5;
+$errorToastbg: #ffe4dc;
+$tableheaderText: rgba(0,0,0,0.87);
+$tableHoverBg: #f5f5f8;
+$tableDarkThemeText: #ffffffbf;
+$noDataFound: #707070;
+// border variables
+$formFieldBorderWidth: 3px;
+$tableactionbg: #000;
+$texteditordark: #3d3e40;
+$fileUploadText: #9E9E9E;
+$calenderBtnBorder: #DDDDEE;
+$calendarDarkBlueBg: #B0C4F9;
+$calendarGreenBg: #A8F1CE;
+$calendarPinkBg: #E7C6FF;
+$calendarYellowBg: #F9E4B0;
+$calendarBlueBg: #A2D2FF;
+$calendarLightBlueBg: #BAF3F7;
+$calendarHighlightBg: rgba(168, 241, 206, 0.2);
+$calendarTodayBoxBg: #FFF6DF;
+$calendarTodayBoxDarkBg: rgba(255, 246, 223, 0.2);
+
+// mixin that enables css variables in light mode
+@mixin lighten() {
+  --no-data-found: #{$noDataFound};
+  --text-color: #{$textColor};
+  --text-secondary-color: #{$textSecondaryColor};
+  --primary-color: #{$app-primary-color};
+  --secondary-color: #{$app-secondary-color};
+  --sidebar-bg: #{$app-secondary-color};
+  --tableheader-text: #{$tableheaderText};
+  --tablebody-text: #{$black};
+  --table-border-color: #{$borderColor};
+  --table-header-border-color: #{$borderColor};
+  --border-color: #{$borderColor};
+  --title-border: #{$borderColor};
+  --text-border-color: #{$textColor};
+  --formfield-border: #{$formfieldBorder};
+  --textfield-border: #{$formfieldBorder};
+  --formfield-background: #{$textColorDark};
+  --scrollbar-thumb: #{$scrollbarThumb};
+  --scrollbar-track: #{$scrollbarTrack};
+  --body-scrollbar-thumb: #{$bodyScrollbarThumb};
+  --body-scrollbar-track: #{$bodyScrollbarTrack};
+  --radio-inner-circle: #{$radioInnerCircle};
+  --switch-inner-circle: #{$radioInnerCircle};
+  --scrollbar-bg: #{$scrollbarBg};
+  --toggle-menu-bg: #{$toggleMenuColor};
+  --error-color: #{$errorColor};
+  --iconbtn-bg: #{$iconBtnBgColor};
+  --iconbtn-hover-bg: #{$app-secondary-color};
+  --iconbtn-header-bg: #{$iconBtnHeaderHover};
+  --formfield-hover-bg: #{$formfieldHoverBg};
+  --formfield-focus-border: #{$app-primary-color};
+  --datepicker-bg: #{$radioInnerCircle};
+  --datepickerBorder: #{$datepickerborder};
+  --datehover: #{$app-secondary-color};
+  --datepickerHeader: #{$app-secondary-color};
+  --datepickerText: #{$datepickerborder};
+  --datepickerTextColor: #{$datepickertxtcolor};
+  --datepickerRangeBg: #{$sidebarHover};
+  --datepickertodaySelectedHover: #{$textColorDark};
+  --icon-btn-border: #{$borderColor};
+  --menu-btn-bg: #{$app-secondary-color};
+  --menu-border: #{$borderColor};
+  --tooltip-bg: #{$textColor};
+  --sidebar-hover: #{$sidebarHover};
+  --btn-color: #{$textColorDark};
+  --primary-btn-hover: #{$primaryBtnHoverBg};
+  --primaryborder-btn-bg: #{$app-secondary-color};
+  --primaryborder-btn-hover: #{$iconBtnBgColor};
+  --customborder-btn-bg: #{$textColorDark};
+  --customborder-btn-border: #{$borderColor};
+  --customborder-btn-hover: #{$iconBtnBgColor};
+  --switch-bg: #{$switchBg};
+  --datepickerLabel: #{$datepickerlabel};
+  --datepickerSelected: #{$app-primary-color};
+  --datepickerActiveFocus: #{$switchBg};
+  --datepickerArrowColor: #{$datepickerarrowcolor};
+  --datepickerTextColorDisable: #{$datepickertxtdisablecolor};
+  --switch-ripple: #{$app-primary-color};
+  --body-bg: #{$textColorDark};
+  --select-search-border: #{$borderColor};
+  --sidebar-overlay: #{$sidebarOverlay};
+  --footer-color: #{$textColor};
+  --primarybtn-hover: #{$primaryBtnHover};
+  --card-border: #{$borderColor};
+  --tabbg: #{$app-primary-color};
+  --tab-focused: #{$tabFocused};
+  --tab-table-bg: #{$textColorDark};
+  --chip-border: #{$chipBorder};
+  --header-bg: #{$app-secondary-color};
+  --header-border: #{$borderColor};
+  --dropdown-checkmark: #{$dropdownCheckmark};
+  --profile-menu-bg: #{transparent};
+  --profile-menu-border: #{$borderColor};
+  --info-toast-bg: #{$infoToastBg};
+  --warning-toast: #{$warningToast};
+  --warning-toast-bg: #{$warningToastBg};
+  --success-toast: #{$successToastBg};
+  --success-toast-text: #{$successToastText};
+  --transparentIconBg: #{$app-secondary-color};
+  --fill-btn-border: #{$fillTextboxBorder};
+  --error-toast-bg: #{$errorToastbg};
+  --footer-bg: #{$textColorDark};
+  --table-th-bg: #{$iconBtnBgColor};
+  --caret-color: #{$app-primary-color};
+  --table-hover-bg: #{$tableHoverBg};
+  --table-action-bg: #{$tableactionbg};
+  --modal-bg: #{$white};
+  --modal-ripple-base: #{$black};
+  --file-upload-text: #{$fileUploadText};
+  --calendar-btn-border: #{$calenderBtnBorder};
+  --calendar-active-color: #{$white};
+  --calendar-darkblue-bg: #{$calendarDarkBlueBg};
+  --calendar-green-bg: #{$calendarGreenBg};
+  --calendar-pink-bg: #{$calendarPinkBg};
+  --calendar-yellow-bg: #{$calendarYellowBg};
+  --calendar-blue-bg: #{$calendarBlueBg};
+  --calendar-lightblue-bg: #{$calendarLightBlueBg};
+  --calendar-highlight-bg: #{$calendarHighlightBg};
+  --blackColor: #{$black};
+  --calendar-header-bg: #{$app-secondary-color};
+  --calendar-today-bg: #{$calendarTodayBoxBg};
+  --calender-tooltip-bg: #{$white};
+  --header-white-bg: #{$white};
+  --header-primary-bg: #{$primary};
+}
+
+// mixin that enables css variables in dark mode
+@mixin darken() {
+  --text-color: #{$textColorDark};
+  --text-secondary-color: #{$textSecondaryDarkColor};
+  --border-color: #{$textColorDark};
+  --caret-color: #{fDark};
+  --title-border: #{$formfieldBorderDark};
+  --tableheader-text: #{$textSecondaryDarkColor};
+  --tablebody-text: #{$tableDarkThemeText};
+  --table-border-color: #{$formfieldBorderDark};
+  --table-header-border-color: #{$datePickerheaderDark};
+  --dark-border-color: #{$darkBorderColor};
+  --text-border-color: #{$textBorderColorDark};
+  --formfield-border: #{$formfieldDarkBorder};
+  --textfield-border: #{$formfieldBorderDark};
+  --formfield-background: #{$formfieldDarkBackground};
+  --scrollbar-thumb: #{$darkScrollbarThumb};
+  --scrollbar-track: #{$darkScrollbarTrack};
+  --scrollbar-bg: #{$darkScrollbarThumb};
+  --body-scrollbar-thumb: #{$bodyScrollbarThumbDark};
+  --body-scrollbar-track: #{$bodyScrollbarTrackDark};
+  --radio-inner-circle: #{$radioInnerCircle};
+  --formfield-hover-bg: #{$formfieldHoverBgDark};
+  --formfield-bg-dark: #{$formfieldBgDark};
+  --formfield-focus-border: #{$textColorDark};
+  --datepicker-bg: #{$formfieldDarkBackground};
+  --datepickerBorder: #{$formfieldDarkBorder};
+  --datehover: #{$datepickerhoverdark};
+  --datepickerHeader: #{$datePickerheaderDark};
+  --datepickerText: #{$textColorDark};
+  --toggle-menu-bg: #{$darkToggleMenuColor};
+  --icon-btn-border: #{$formfieldDarkBorder};
+  --iconbtn-bg: #{$datepickerhoverdark};
+  --iconbtn-hover-bg: #{$datepickerhoverdark};
+  --iconbtntable-hover-bg: #{$formfieldDarkBorder};
+  --iconbtn-header-bg: #{$formfieldBorderDark};
+  --menu-btn-bg: #{$datepickerhoverdark};
+  --menu-border: #{$formfieldDarkBorder};
+  --tooltip-bg: #{$tooltipBgDark};
+  --primaryborder-btn-bg: #{$formfieldDarkBackground};
+  --primaryborder-btn-hover: #{$formfieldDarkBackground};
+  --customborder-btn-bg: #{transparent};
+  --customborder-btn-border: #{$formfieldBorderDark};
+  --customborder-btn-hover: #{$formfieldDarkBackground};
+  --sidebar-link-color: #{$sidebarTextColorDark};
+  --sidebar-hover: #{$sidebarHoverDark};
+  --sidebar-hover-dark: #{$sidebarHoverDark};
+  --datepickerSelected: #{$formfieldBgDark};
+  --datepickerActiveFocus: #{$datepickerhoverdark};
+  --datepickerArrowColor: #{$textColorDark};
+  --datepickerTextColor: #{$textColorDark};
+  --datepickerRangeBg: #{$sidebarHoverDark};
+  --datepickertodaySelectedHover: #{$textColorDark};
+  --datepickerTextColorDisable: #{$datepickertxtdisablecolordark};
+  --switch-bg: #{$formfieldDarkBackground};
+  --switch-inner-circle: #{$formfieldBorderDark};
+  --switch-inner-circle-checked: #{$textColorDark};
+  --body-bg: #{$formfieldBgDark};
+  --select-search-border: #{$formfieldBorderDark};
+  --footer-color: #{$textBorderColorDark};
+  --primarybtn-hover: #{$formfieldDarkBackground};
+  --card-border: #{$formfieldDarkBorder};
+  --tabbg: #{$white};
+  --tab-focused: #{$tabFocusedDark};
+  --tab-table-bg: #{$datepickerhoverdark};
+  --chip-border: #{$chipBorderDark};
+  --header-bg: #{$formfieldDarkBackground};
+  --header-border: #{$darkBorderColor};
+  --sidebar-bg: #{$textColorDark};
+  --profile-menu-bg: #{$formfieldBgDark};
+  --profile-menu-border: #{$datePickerheaderDark};
+  --transparentIconBg: #{transparent};
+  --footer-bg:#{$formfieldBgDark};
+  --table-th-bg: #{$formfieldDarkBackground};
+  --table-hover-bg: #{$datepickerhoverdark};
+  --table-action-bg: #{$formfieldDarkBorder};
+  --darkThemeGray: #{$texteditordark};
+  --darktexteditorblack: #{$black};
+  --darktexteditorWhite: #{$white};
+  --modal-bg: #{$bodyScrollbarTrackDark};
+  --calendar-header-bg: #{$formfieldDarkBackground};
+  --calendar-today-bg: #{$calendarTodayBoxDarkBg};
+  --calender-tooltip-bg: #{$formfieldDarkBackground};
+  --header-white-bg: #{$formfieldBgDark};
+  --header-primary-bg: #{$formfieldBgDark};
+}
+
+body {
+  @include lighten();
+}
+.dark-theme {
+  @include darken();
+}

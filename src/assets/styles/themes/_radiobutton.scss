@@ -1,0 +1,180 @@
+ts-radio-button, .normal-radio-button-wrapper {
+  .mat-mdc-radio-button {
+    .mdc-radio {
+      padding: 0;
+      position: relative;
+      height: 1.8rem;
+      width: 1.8rem;
+      .mdc-radio__background {
+        height: 1.8rem;
+        width: 1.8rem;
+        &::before {
+          display: none;
+        }
+        .mdc-radio__inner-circle {
+           /* transform: scale(0, 0); */
+          position: absolute;
+          height: 0.72rem;
+          width: 0.72rem;
+          left: 5.9px;
+          top: 5.6px;
+          transform: none;
+          border: none;
+          background: var(--radio-inner-circle);
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      .mdc-radio__native-control {
+        width: inherit;
+        height: inherit;
+        &:focus {
+          &:not(:checked) {
+            ~ .mdc-radio__background {
+              .mdc-radio__outer-circle {
+                border-color: var(--primary-color);
+              }
+            }
+        }
+      }
+        &:enabled {
+          &:checked + .mdc-radio__background {
+            .mdc-radio__inner-circle {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          &:not(:checked) + .mdc-radio__background {
+            .mdc-radio__outer-circle {
+              border-color: var(--formfield-border) !important;
+            }
+          }
+          &:focus {
+              &:not(:checked) {
+                ~ .mdc-radio__background {
+                  .mdc-radio__outer-circle {
+                    border-color: var(--primary-color);
+                  }
+                }
+            }
+          }
+        }
+        &:checked + .mdc-radio__background {
+          background-color: var(--primary-color);
+          border-radius: 50%;
+          .mdc-radio__outer-circle{
+            border-color: var(--primary-color);
+          }
+        }
+      }
+      .mat-mdc-radio-touch-target {
+        width: inherit;
+        height: inherit;
+      }
+      &:hover {
+        .mdc-radio__native-control {
+          &:enabled {
+            &:not(:checked) + .mdc-radio__background {
+              .mdc-radio__outer-circle {
+                border-color: var(--formfield-border);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.mat-mdc-radio-checked {
+      .mdc-radio__background {
+        &::before {
+          border-color: var(--primary-color);
+        }
+      }
+    }
+    .mat-radio-ripple {
+      display: none;
+    }
+    + .mat-mdc-radio-button {
+      margin-left: 2.5rem;
+    }
+    &:has(.mdc-radio--disabled){
+      cursor: not-allowed;
+      label{
+        color: inherit;
+        opacity: 0.7 !important;
+      }
+      .mdc-form-field{
+        pointer-events: none;
+      }
+      .mdc-radio{
+        .mdc-radio__native-control{
+          &:disabled{
+            &:checked{
+              &+.mdc-radio__background{
+                .mdc-radio__outer-circle{
+                  border-color: var(--primary-color);
+                }
+                .mdc-radio__inner-circle{
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+            &+.mdc-radio__background{
+              opacity: 0.7 !important;
+              .mdc-radio__outer-circle{
+                border-color: var(--formfield-border);
+                opacity: 1 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    &[ng-reflect-disabled="true"]{
+      cursor:not-allowed;
+      .mdc-radio--disabled{
+        cursor:not-allowed;
+      }
+      .mdc-radio__background{
+        opacity: 0.3 !important;
+        .mdc-radio__outer-circle{
+          border-color: var(--formfield-border) !important;
+          opacity: 1 !important;
+        }
+      }
+      label{
+        color: var(--text-color);
+        opacity: 0.3 ;
+        cursor:not-allowed;
+      }
+    }
+  }
+
+  .mdc-form-field {
+    align-items: center;
+    > label {
+      padding-left: 0.8rem;
+      line-height: 1.2;
+      margin-bottom: 0;
+      cursor: pointer;
+      color: var(--text-color) !important;
+    }
+    &.mdc-form-field--align-end {
+      > label {
+        padding-right: 0.8rem;
+        padding-left: 0;
+      }
+    }
+  }
+}
+.mat-mdc-radio-group{
+  &.vertical{
+    .mat-mdc-radio-button{
+      display: block;
+      + .mat-mdc-radio-button{
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

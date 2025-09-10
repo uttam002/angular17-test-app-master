@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
+  color: var(--text-color);
+  .dark-theme-visible {
+    display: none !important;
+  }
+  &.dark-theme {
+    .light-theme-visible {
+      display: none !important;
+    }
+    .dark-theme-visible {
+      display: block !important;
+    }
+  }
+}
+.page-wrapper {
+  padding-top: 5.2rem;
+  .visibleHederAutoCom &{
+    padding-top: 11.2rem;
+  }
+}
+.page-content {
+  .page-wrapper-outer {
+    min-height: calc(100vh - 9.9rem);
+    background-color: var(--body-bg);
+    position: relative;
+    height: 100%;
+    @include bp(sm-max) {
+      min-height: calc(100vh - 12rem);
+    }
+    @include bp(xxs-max) {
+      min-height: calc(100vh - 13.4rem);
+    }
+  }
+}
+.mat-typography {
+  .title-wrapper {
+    margin-bottom: 1.5rem;
+    border-bottom: 0.2rem solid var(--border-color);
+    padding: 0 0 1rem;
+  }
+  h1,
+  .h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: normal;
+    margin: 0;
+  }
+}
+.ts-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+  &.ts-row-condensed {
+    margin: 0 -0.5rem;
+    @include bp(xs-max) {
+      margin: 0 -0.5rem -1rem;
+    }
+    .ts-col {
+      padding: 0 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .ts-row {
+    margin-bottom: -2rem;
+    @include bp(xs-max) {
+      margin-bottom: -1rem;
+    }
+  }
+  .ts-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    @include bp(xs-max) {
+      margin-bottom: 1rem;
+    }
+    &:empty {
+      margin-bottom: 0;
+    }
+    &.has-large-textarea {
+      ts-textarea {
+        display: block;
+        height: 100%;
+        form {
+          height: 100%;
+          .mat-mdc-form-field {
+            height: calc(100% - 23px);
+          }
+        }
+      }
+    }
+    &.ts-col-2 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include bp(xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    &.ts-col-3 {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      @include bp(xl-max) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        @include bp(xs-max) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    }
+    &.ts-col-4 {
+      flex: 0 0 25%;
+      max-width: 25%;
+      @include bp(xl-max) {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      @include bp(xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    &.ts-col-5 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+    &.ts-col-6 {
+      flex: 0 0 16.66%;
+      max-width: 16.66%;
+      @include bp(xl-max) {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+      @include bp(xs-max) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    &.ts-col-7 {
+      flex: 0 0 14.29%;
+      max-width: 14.29%;
+    }
+    &.ts-col-8 {
+      flex: 0 0 12.5%;
+      max-width: 12.5%;
+    }
+    &.ts-col-9 {
+      flex: 0 0 11.11%;
+      max-width: 11.11%;
+    }
+  }
+  &.ts-condesed{
+    margin: 0 -0.5rem -1rem;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--body-scrollbar-thumb) var(--body-scrollbar-track);
+  scrollbar-gutter: auto;
+  &::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+    background: var(--body-scrollbar-thumb);
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 5px;
+    width: 5px;
+    padding: 3px;
+    border-radius: 1.2rem;
+    background: var(--body-scrollbar-thumb);
+  }
+}
+
+.custom-tooltip {
+  white-space: pre-line;
+  z-index: 10000 !important;
+  &.table-tooltip {
+    .mdc-tooltip__surface {
+      max-width: 152px;
+      text-align: left;
+    }
+  }
+  &.lg {
+    .mdc-tooltip__surface {
+      max-width: 220px;
+    }
+  }
+  &.xlg {
+    .mdc-tooltip__surface {
+      max-width: 260px;
+      line-height: 1.65;
+    }
+  }
+}
+.mdc-tooltip__surface {
+  background-color: var(--tooltip-bg) !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+  padding: 0.5rem 0.8rem !important;
+  white-space: pre-line !important;
+  border-radius: 0.2rem !important;
+}

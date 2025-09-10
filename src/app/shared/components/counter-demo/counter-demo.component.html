@@ -1,0 +1,84 @@
+<div class="counter-demo">
+  <h2>Counter Animation Demo</h2>
+
+  <div class="demo-section">
+    <h3>Basic Counter</h3>
+    <div class="counter-display">
+      <span appCounterAnimation="1000" class="counter-number"></span>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Formatted Number with Separators</h3>
+    <div class="counter-display">
+      <span
+        appCounterAnimation="1234567"
+        [counterOptions]="formattedOptions"
+        class="counter-number">
+      </span>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Currency Format</h3>
+    <div class="counter-display">
+      <span
+        appCounterAnimation="9999.99"
+        [counterOptions]="currencyOptions"
+        class="counter-number currency">
+      </span>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Percentage</h3>
+    <div class="counter-display">
+      <span
+        appCounterAnimation="85.5"
+        [counterOptions]="percentageOptions"
+        class="counter-number percentage">
+      </span>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Different Easing Effects</h3>
+    <div class="easing-demo">
+      <div class="easing-item">
+        <label>Linear:</label>
+        <span appCounterAnimation="100" [counterOptions]="linearOptions" class="counter-number"></span>
+      </div>
+      <div class="easing-item">
+        <label>Ease In:</label>
+        <span appCounterAnimation="100" [counterOptions]="easeInOptions" class="counter-number"></span>
+      </div>
+      <div class="easing-item">
+        <label>Ease Out:</label>
+        <span appCounterAnimation="100" [counterOptions]="easeOutOptions" class="counter-number"></span>
+      </div>
+      <div class="easing-item">
+        <label>Ease In-Out:</label>
+        <span appCounterAnimation="100" [counterOptions]="easeInOutOptions" class="counter-number"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Interactive Counter</h3>
+    <div class="interactive-demo">
+      <input
+        type="number"
+        [(ngModel)]="interactiveValue"
+        placeholder="Enter a number"
+        class="number-input">
+      <button (click)="updateCounter()" class="update-btn">Animate</button>
+      <div class="counter-display">
+        <span
+          appCounterAnimation="{{interactiveValue}}"
+          [counterOptions]="interactiveOptions"
+          class="counter-number interactive">
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

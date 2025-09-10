@@ -1,0 +1,25 @@
+<div class="animated-cards-demo">
+  <h2>Animated Cards Demo</h2>
+  <p>Showcasing different animated counter configurations in dashboard cards</p>
+
+  <div class="demo-grid">
+    <!-- Work Log Card with Animated Counters -->
+    <test-generic-card [config]="workLogDemo" class="demo-card"></test-generic-card>
+
+    <!-- Statistics Card -->
+    <test-generic-card [config]="statisticsDemo" class="demo-card"></test-generic-card>
+
+    <!-- Revenue Card -->
+    <test-generic-card [config]="revenueDemo" class="demo-card"></test-generic-card>
+
+    <!-- Performance Card -->
+    <test-generic-card [config]="performanceDemo" class="demo-card"></test-generic-card>
+  </div>
+
+  <div class="demo-controls">
+    <button (click)="refreshCounters()" class="refresh-btn">Refresh Animations</button>
+    <button (click)="toggleAnimation()" class="toggle-btn">
+      {{ animationEnabled ? 'Disable' : 'Enable' }} Animation
+    </button>
+  </div>
+</div>

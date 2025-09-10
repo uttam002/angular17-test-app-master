@@ -1,0 +1,66 @@
+<!-- Work Group Information -->
+<div class="work-group-info mb-4">
+  <div class="work-group-details">
+    <span class="work-group-label">Work Group:</span>
+    <span class="work-group-title">{{ workGroupInfo.title }} ({{ workGroupInfo.startDate | date:'dd-MMM-yyyy' }} - {{ workGroupInfo.endDate | date:'dd-MMM-yyyy' }})</span>
+  </div>
+</div>
+
+<!-- View Controls -->
+<div class="view-controls mb-4">
+  <div class="view-buttons">
+    <button
+      *ngFor="let view of viewOptions"
+      [class]="'view-btn ' + (view.active ? 'active' : '')"
+      (click)="selectView(view.type)">
+      <i [class]="view.icon"></i>
+      {{ view.name }}
+    </button>
+  </div>
+</div>
+
+<!-- Kanban Board -->
+<div class="kanban-board" *ngIf="currentView === 'dashboard'">
+  <div class="kanban-column" *ngFor="let column of kanbanColumns">
+    <div class="column-header">
+      <h3 class="column-title">{{ column.title }}</h3>
+      <div class="column-count" [style.background-color]="column.color">
+        <span appCounterAnimation="{{ column.count }}" [counterOptions]="getCounterOptions()"></span>
+      </div>
+    </div>
+    <div class="column-content" [class]="'column-' + column.status.toLowerCase()">
+      <div class="work-item" *ngFor="let item of column.items" (click)="selectWorkItem(item)">
+        <div class="work-item-header">
+          <span class="work-item-id">{{ item.id }}</span>
+          <span class="work-item-priority" [class]="'priority-' + item.priority.toLowerCase()">
+            {{ item.priority }}
+          </span>
+        </div>
+        <div class="work-item-title">{{ item.title }}</div>
+        <div class="work-item-meta">
+          <span class="work-item-assignee" *ngIf="item.assignee">{{ item.assignee }}</span>
+          <span class="work-item-due-date" *ngIf="item.dueDate">{{ item.dueDate | date:'dd/MM' }}</span>
+        </div>
+      </div>
+      <div class="empty-column" *ngIf="column.items.length === 0">
+        <div class="empty-state">
+          <i class="fas fa-plus-circle"></i>
+          <p>No work items</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- List View -->
+<div class="list-view" *ngIf="currentView === 'list'">
+  <ts-data-grid [config]="workItemsDataGridConfig"></ts-data-grid>
+</div>
+
+<!-- Work Log View -->
+<div class="work-log-view" *ngIf="currentView === 'worklog'">
+  <div class="work-log-content">
+    <h3>Work Log View</h3>
+    <p>Work log functionality will be implemented here.</p>
+  </div>
+</div>

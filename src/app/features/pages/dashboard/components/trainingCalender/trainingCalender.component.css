@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+.legend {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.legend-item {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+.legend-item.trainee {
+  background-color: #f3d98c;
+}
+
+.legend-item.faculty {
+  background-color: #8cb6f3;
+}
+.calender-wrapper{
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+.calender-container {
+  border: 2px solid #b1aaaa !important;
+  padding: 12px;
+  max-height: 370px;
+}

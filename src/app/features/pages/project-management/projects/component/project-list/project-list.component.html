@@ -1,0 +1,42 @@
+<ts-data-grid [config]="dataGridConfig"></ts-data-grid>
+
+<ng-template #typeTemplate let-data="data">
+  <span
+    class="type-badge"
+    [ngClass]="{
+      monthly: data?.type.toLowerCase() === 'monthly',
+      hourly: data?.type.toLowerCase() === 'hourly',
+      fixed: data?.type.toLowerCase() === 'fixed'
+    }"
+  >
+    {{ data.type }}
+  </span>
+</ng-template>
+
+<ng-template #statusTemplate let-data="data">
+  <span
+    class="status-badge"
+    [ngClass]="{
+      'in-progress': data?.status.toLowerCase() === 'in progress',
+      'completed': data?.status.toLowerCase() === 'completed',
+      'hold': data?.status.toLowerCase() === 'hold',
+      'unassigned': data?.status.toLowerCase() === 'unassigned',
+      'dev-completed': data?.status.toLowerCase() === 'dev completed',
+
+    }"
+  >
+    {{ data.status }}
+  </span>
+</ng-template>
+
+<ng-template #tooltipTemplate let-data="data">
+  <div class="cutom-tooltip-template">
+    <div class="d-flex bg-body-secondary tooltip-title">
+      <h4>Active Work Group(s)</h4>
+    </div>
+    <div class="d-flex bg-white tooltip-data">
+      {{ today | date:'MMMM-yyyy' }}
+      {{ data?.type }}
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,93 @@
+.animated-cards-demo {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.animated-cards-demo h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.animated-cards-demo p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.demo-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.demo-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.refresh-btn, .toggle-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn {
+  background: #1e63e9;
+  color: white;
+}
+
+.refresh-btn:hover {
+  background: #1754c6;
+  transform: translateY(-2px);
+}
+
+.toggle-btn {
+  background: #28a745;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .animated-cards-demo {
+    padding: 1rem;
+  }
+
+  .demo-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .demo-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .refresh-btn, .toggle-btn {
+    width: 200px;
+  }
+}

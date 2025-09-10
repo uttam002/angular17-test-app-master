@@ -1,0 +1,73 @@
+.card {
+  border-radius: 8px;
+  padding: 12px;
+  height: 150px;
+  min-height: 120px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card.bg-purple {
+  background: #f3f0ff9f;
+}
+
+.card.bg-pink {
+  background: #fff0f09f;
+}
+
+.card.bg-blue {
+  background: #f0f5ff9f;
+}
+
+.card.bg-green {
+  background: #f0fff59f;
+}
+
+.card .card-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card .stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.card .stat .stat-value {
+  font-weight: 600;
+}
+
+.card .stat .stat-value.animated {
+  font-weight: 700;
+  color: #1e63e9;
+  transition: all 0.3s ease;
+}
+
+.card .stat .stat-value.animated:hover {
+  transform: scale(1.05);
+  color: #1754c6;
+}
+
+.card .link a {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.card .card-footer {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+}
+
+.card .card-footer button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -25,30 +25,78 @@ export class RegisterFormComponent {
     });
   }
 
-  textInputUserNameConfig: TsInputConfig = {
-    type: TsInputType.Text,
-    formControlName: 'userName',
-    label: 'Username'
+  // Username
+textInputUserNameConfig: TsInputConfig = {
+  id: 'username',
+  type: TsInputType.Text,
+  formControlName: 'userName',
+  label: 'Username',
+  placeholder: 'Enter your username',
+  appearance: 'outline',
+  customValidationMessage: (errorType: string) => {
+    switch (errorType) {
+      case 'required': return 'Username is required';
+      case 'minlength': return 'Must be at least 3 characters long';
+      case 'maxlength': return 'Cannot exceed 20 characters';
+      default: return 'Invalid username';
+    }
   }
+}
 
-  textInputEmailConfig: TsInputConfig = {
-    type: TsInputType.Email,
-    formControlName: 'email',
-    label: 'Email'
+// Email
+textInputEmailConfig: TsInputConfig = {
+  id: 'email',
+  type: TsInputType.Email,
+  formControlName: 'email',
+  label: 'Email',
+  placeholder: 'Enter your email',
+  appearance: 'outline',
+  customValidationMessage: (errorType: string) => {
+    switch (errorType) {
+      case 'required': return 'Email is required';
+      case 'email': return 'Enter a valid email address';
+      default: return 'Invalid email';
+    }
   }
+}
 
-  textInputPasswordConfig: TsInputConfig = {
-    type: TsInputType.Password,
-    formControlName: 'password',
-    label: 'Password'
+textInputPasswordConfig: TsInputConfig = {
+  id: 'password',
+  type: TsInputType.Password,
+  formControlName: 'password',
+  label: 'Password',
+  placeholder: 'Enter a strong password',
+  appearance: 'outline',
+  customValidationMessage: (errorType: string) => {
+    switch (errorType) {
+      case 'required': return 'Password is required';
+      case 'minlength': return 'Password must be at least 6 characters long';
+      default: return 'Invalid password';
+    }
+  },
+  keypress: (event: KeyboardEvent) => {
+    if (event.key === ' ') {
+      event.preventDefault();
+      return false; // prevent spaces
+    }
+    return true;
   }
+}
 
-  textInputPhoneConfig: TsInputConfig = {
-    type: TsInputType.Text,
-    formControlName: 'phoneNumber',
-    label: 'Phone Number'
+textInputPhoneConfig: TsInputConfig = {
+  id: 'phone',
+  type: TsInputType.Text,
+  formControlName: 'phoneNumber',
+  label: 'Phone Number',
+  placeholder: '+91 9876543210',
+  appearance: 'outline',
+  customValidationMessage: (errorType: string) => {
+    switch (errorType) {
+      case 'pattern': return 'Enter a valid phone number (max 15 digits)';
+      default: return 'Invalid phone number';
+    }
   }
-
+}
   registerButtonConfig: TsButtonConfig = {
     buttonText: 'Register',
     color: 'primary',
@@ -69,7 +117,6 @@ export class RegisterFormComponent {
         const userData = this.registerForm.value;
         this.authService.register(userData);
         console.log('User registered:', userData);
-        // Reset form after successful registration
         this.registerForm.reset();
       } else {
         // Mark all fields as touched to show validation errors

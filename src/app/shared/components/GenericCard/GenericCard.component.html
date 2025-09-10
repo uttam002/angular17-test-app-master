@@ -1,0 +1,42 @@
+<div class="card" [ngClass]="config.background" >
+  <div class="card-header">
+    <span class="card-title">{{ config.title }}</span>
+    <i *ngIf="config.icon" [class]="config.icon"></i>
+  </div>
+
+  <div class="card-body">
+    <!-- Stats block -->
+    <ng-container *ngIf="config.stats">
+      <div class="stat" *ngFor="let s of config.stats">
+        <span class="stat-label">{{ s.label }}</span>
+        <!-- Animated counter -->
+        <span
+          *ngIf="shouldAnimate(s.value)"
+          class="stat-value animated"
+          appCounterAnimation="{{getNumericValue(s.value)}}"
+          [counterOptions]="getAnimationOptions(s.value)">
+        </span>
+        <!-- Static value -->
+        <span
+          *ngIf="!shouldAnimate(s.value)"
+          class="stat-value">
+          {{ s.value.value }}
+        </span>
+      </div>
+    </ng-container>
+
+    <!-- Links block -->
+    <ng-container *ngIf="config.links">
+      <div class="link" *ngFor="let l of config.links">
+        <a [href]="l.url" target="_blank">{{ l.text }}</a>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Footer button -->
+  <div class="card-footer" *ngIf="config.footerButton">
+    <button (click)="config.footerButton.action()">
+      {{ config.footerButton.text }}
+    </button>
+  </div>
+</div>

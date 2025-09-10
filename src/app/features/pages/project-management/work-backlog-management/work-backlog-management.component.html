@@ -1,0 +1,20 @@
+<div class="work-backlog-container">
+  <div class="work-backlog-header">
+    <test-work-backlog-management-header
+      [currentProjectName]="currentProject.name"
+      [currentProjectCode]="currentProject.code">
+    </test-work-backlog-management-header>
+  </div>
+
+  <div class="work-backlog-content">
+    <test-work-backlog-management-playground
+      [workGroupInfo]="{
+        title: currentWorkGroup.title,
+        startDate: currentWorkGroup.startDate,
+        endDate: currentWorkGroup.endDate,
+        projectName: currentProject.name,
+        projectCode: currentProject.code
+      }">
+    </test-work-backlog-management-playground>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="status-bar mt-3">
+  <ng-container *ngFor="let status of statuses">
+    <div class="status-segment"
+         [style.width.%]="status.percentage"
+         [style.background-color]="getStatusColor(status.type)"
+         matTooltip="{{ status.type }} ({{ status.percentage }}%)"
+         matTooltipPosition="above">
+    </div>
+  </ng-container>
+</div>

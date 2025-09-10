@@ -1,13 +1,13 @@
 <form [formGroup]="loginForm" novalidate class="login-form">
   <!-- Username Input -->
-  <ts-input [config]="textInputUserNameConfig"></ts-input>
+  <ts-input [config]="textInputUserNameConfig" class="me-3"></ts-input>
   <!-- <div *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid"
        class="error-text">
     Username is required.
   </div> -->
 
   <!-- Password Input -->
-  <ts-input [config]="textInputPasswordConfig"></ts-input>
+  <ts-input [config]="textInputPasswordConfig" class="me-3" testTogglePassword></ts-input>
 
   <!-- Checkbox and Forgot Link -->
   <div class="form-footer d-flex align-items-center justify-content-between mt-2">

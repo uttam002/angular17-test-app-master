@@ -1,0 +1,201 @@
+// autocomplete dropdown options (multiple selections)
+ts-autocomplete {
+  .mat-mdc-form-field {
+    &.mat-mdc-form-field-has-icon-suffix {
+      .mat-mdc-text-field-wrapper {
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+.mat-mdc-autocomplete-panel {
+  .mat-mdc-option {
+    line-height: 1;
+
+    .mdc-list-item__primary-text {
+      line-height: 1;
+
+      .mat-mdc-checkbox {
+        .mdc-checkbox {
+          width: 1.6rem;
+          height: 1.6rem;
+          padding: 0;
+          flex: 0 0 1.6rem;
+
+          .mat-mdc-checkbox-touch-target {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+
+          .mdc-checkbox__native-control {
+            background-color: var(--dropdown-checkmark);
+            width: inherit;
+            height: inherit;
+
+            &[data-indeterminate="true"] {
+              &:enabled {
+                ~.mdc-checkbox__background {
+                  border-color: var(--primary-color);
+                  background-color: var(--primary-color);
+
+                  .mdc-checkbox__checkmark {
+                    color: var(--dropdown-checkmark);
+                  }
+                }
+              }
+            }
+
+            &:enabled {
+
+              &:checked,
+              &:indeterminate {
+                ~.mdc-checkbox__background {
+                  border-color: var(--primary-color);
+                  background-color: var(--primary-color);
+
+                  .mdc-checkbox__checkmark {
+                    color: var(--dropdown-checkmark);
+                  }
+                }
+              }
+
+              &:not(:checked) {
+                &:not(:indeterminate) {
+                  &:not([data-indeterminate="true"])~.mdc-checkbox__background {
+                    border-color: var(--formfield-border);
+                    background-color: var(--formfield-background);
+                  }
+                }
+              }
+
+              &:focus {
+                &:focus {
+                  &:not(:checked) {
+                    &:not(:indeterminate)~.mdc-checkbox__background {
+                      border-color: var(--formfield-border);
+                      background-color: var(--formfield-background);
+                    }
+                  }
+                }
+
+                &:checked,
+                &:indeterminate {
+                  ~.mdc-checkbox__background {
+                    border-color: var(--primary-color);
+                    background-color: var(--primary-color);
+
+                    .mdc-checkbox__checkmark {
+                      color: var(--dropdown-checkmark);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .mat-mdc-checkbox-ripple,
+          .mdc-checkbox__ripple {
+            display: none;
+          }
+
+          .mdc-checkbox__background {
+            top: 0;
+            left: 0;
+            border-radius: 0.2rem;
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+
+          &:hover {
+            .mdc-checkbox__native-control {
+              &:enabled {
+                &:not(:checked) {
+                  &:not(:indeterminate) {
+                    &:not([data-indeterminate="true"])~.mdc-checkbox__background {
+                      border-color: var(--formfield-border);
+                      background-color: var(--formfield-background);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .mdc-form-field {
+          >label {
+            padding-left: 0.8rem;
+            line-height: 1.28;
+            margin-bottom: 0;
+          }
+
+          &.mdc-form-field--align-end {
+            >label {
+              padding-right: 0.8rem;
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.project-select-autocomplete {
+    margin-top: 0.7rem !important;
+    padding: 0.9rem 0 0.8rem !important;
+    border: 0.1rem solid transparent !important;
+    box-shadow: 0 1.4rem 1.6rem var(--black2) !important;
+    border-radius: 0 0 1rem 1rem !important;
+    box-shadow: 0px 3px 15px 0px rgb(0 0 0 / 10%) !important;
+    border-top: none !important;
+    max-height: 263px !important;
+    position: absolute;
+    right: 0;
+    @include bp(xs-max) {
+      border-radius: 1rem !important;
+      margin-top: 1rem !important;
+      border: 0.1rem solid var(--menu-border) !important;
+    }
+
+    .dark-theme & {
+      box-shadow: 0px 3px 15px 0px rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .mat-mdc-option {
+      padding: 0 !important;
+
+      &.mat-mdc-option-active {
+        .mdc-list-item__primary-text {
+          background-color: var(--header-chip-bg);
+        }
+      }
+
+      &.mdc-list-item--selected {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      .mdc-list-item__primary-text {
+        font-size: 1.4rem !important;
+        line-height: 1.5 !important;
+        padding: 1rem 1.5rem;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: .3rem;
+          height: 1.6rem;
+          transform: translateY(-50%);
+          border-radius: .2rem;
+          background-color: var(--dark-blue1);
+          content: " ";
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

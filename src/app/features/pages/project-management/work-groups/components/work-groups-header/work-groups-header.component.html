@@ -1,0 +1,13 @@
+<div class="row overflow-hidden">
+  <div class="row border-bottom mb-3 pb-3">
+    <div class="sub-title">Project / {{ currentProjectName}}({{currentProjectCode}})</div>
+    <div class="title"><h2>Work Groups</h2></div>
+  </div>
+  <div class="status-container w-100 row d-flex flex-nowrap justify-content-between">
+    <app-status-card [count]="153" label="New" color="#b388ff" class="w-20"></app-status-card>
+    <app-status-card [count]="153" label="In-Progress" color="#ffcc80" class="w-20"></app-status-card>
+    <app-status-card [count]="43"  label="Dev Completed" color="#81c784" class="w-20"></app-status-card>
+    <app-status-card [count]="19"  label="Ready For Testing" color="#ce93d8" class="w-20"></app-status-card>
+    <app-status-card [count]="170" label="Closed" color="#90caf9" class="w-20"></app-status-card>
+  </div>
+</div>

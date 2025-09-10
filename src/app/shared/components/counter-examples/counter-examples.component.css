@@ -1,0 +1,135 @@
+.counter-examples {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.counter-examples h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.example-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.example-card h3 {
+  color: #1e63e9;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.example-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.counter-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1e63e9;
+  text-align: center;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+}
+
+.counter-value.currency {
+  color: #28a745;
+  background: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.counter-value.percentage {
+  color: #dc3545;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.counter-value.large {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  background: #e2e3f1;
+  border-color: #d1d3e2;
+}
+
+.counter-value.small {
+  font-size: 2rem;
+  color: #fd7e14;
+  background: #fff3cd;
+  border-color: #ffeaa7;
+}
+
+.easing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.easing-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.easing-item label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.easing-item .counter-value {
+  margin: 0;
+  min-height: 3rem;
+}
+
+@media (max-width: 768px) {
+  .counter-examples {
+    padding: 1rem;
+  }
+
+  .example-card {
+    padding: 1.5rem;
+  }
+
+  .counter-value {
+    font-size: 2rem;
+    min-height: 3rem;
+  }
+
+  .counter-value.large {
+    font-size: 1.8rem;
+  }
+
+  .easing-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

@@ -1,23 +1,20 @@
 .modernCard {
   max-width: 960px;
-  min-height: 480px;
+  min-height: 400px;
   margin: auto;
-  border-radius: 32px;
-  background: #ffffffee;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 2rem;
   box-shadow: 0 10px 48px 0 rgba(54,34,164,0.09), 0 1.5px 12px 0 #7a5fff10;
   overflow: hidden;
   animation: cardPop 1.1s cubic-bezier(.46,2,.46,1.2);
 }
 .infoPanel {
-  background: linear-gradient(120deg, #f8fafc 60%, #e9f1ff 100%);
   color: #222;
   position: relative;
   min-height: 350px;
   height: inherit;
-  border-top-left-radius: 32px;
-  border-bottom-left-radius: 32px;
   overflow: hidden;
-  padding: 2rem 2.5rem;
   z-index: 1;
 }
 

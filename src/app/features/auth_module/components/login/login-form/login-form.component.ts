@@ -6,11 +6,12 @@ import { TsCheckboxComponent, TsCheckboxConfig } from 'ts-components/form-contro
 import { TsButtonConfig, TsButtonComponent } from 'ts-components/form-controls/button';
 import { AuthService } from '../../../../../shared/services/auth.service';
 import { RouterModule } from '@angular/router';
+import { TogglePassword } from '../../../../../shared/directives/toggle-password.directive';
 
 @Component({
   selector: 'test-login-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, TsInputComponent, TsCheckboxComponent, TsButtonComponent, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, TsInputComponent, TsCheckboxComponent, TsButtonComponent, RouterModule, TogglePassword],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
@@ -19,21 +20,51 @@ export class LoginFormComponent{
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.loginForm = this.fb.group({
-      userName: ['', [Validators.required]],
+      userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       rememberMe: [false]
     });
   }
 
   textInputUserNameConfig: TsInputConfig = {
-    type: TsInputType.Text,
+    id: 'username',
+    label: 'User Name',
     formControlName: 'userName',
-    label: 'UserName'
+    type: TsInputType.Text,
+    placeholder: 'Enter your username',
+    appearance: 'outline',
+    autofocus: true,
+    customValidationMessage: (errorType: string) => {
+      switch (errorType) {
+        case 'required': return 'User name is required';
+        case 'minlength': return 'User name must be at least 3 characters long';
+        case 'maxlength': return 'User name cannot exceed 20 characters';
+        default: return 'Invalid input';
+      }
+    }
   }
+
   textInputPasswordConfig: TsInputConfig = {
-    type: TsInputType.Password,
+    id: 'password',
+    label: 'Password',
     formControlName: 'password',
-    label: 'Password'
+    type: TsInputType.Password,
+    placeholder: 'Enter your password',
+    appearance: 'outline',
+    customValidationMessage: (errorType: string) => {
+      switch (errorType) {
+        case 'required': return 'Password is required';
+        case 'minlength': return 'Password must be at least 6 characters long';
+        default: return 'Invalid password';
+      }
+    },
+    keypress: (event: KeyboardEvent) => {
+      if (event.key === ' ') {
+        event.preventDefault();
+        return false;
+      }
+      return true;
+    }
   }
   rememberMeCheckboxConfig: TsCheckboxConfig = {
     formControlName: 'rememberMe',
@@ -46,7 +77,7 @@ export class LoginFormComponent{
     isPrimary: true,
     cssClasses: [
       'w-100',
-      'mt-4',
+      'mt-2',
       'py-2',
       'bg-primary',
       'text-white',
@@ -58,10 +89,10 @@ export class LoginFormComponent{
       if (this.loginForm.valid) {
         const { userName, password } = this.loginForm.value;
         if (this.authService.login(userName, password)) {
-          console.log('Login successful');
-          // Navigate to dashboard or home page
+          alert('Login successful');
+          this.loginForm.reset();
         } else {
-          console.log('Invalid credentials');
+          alert('Invalid credentials');
         }
       } else {
         // Mark all fields as touched to show validation errors

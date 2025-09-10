@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@import "assets/styles/themes/theme-main.scss";
+@import "assets/styles/application/application-main.scss";
+
+@include mat.core();
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+li {
+  color: var(--text-color);
+}
+$body-1: mat.define-typography-level(13px, 24px, 400);
+$button: mat.define-typography-level(13px, 1, 400);
+$typography-config: mat.define-typography-config(
+  $font-family: $primaryFontFamily,
+  $body-1: $body-1,
+  $button: $button,
+);
+$TsComponentsDocs-primary: mat.define-palette(
+  $primary-palette,
+  main,
+  main,
+  main
+);
+$TsComponentsDocs-accent: mat.define-palette($accent-palette, main, main, main);
+$TsComponentsDocs-warn: mat.define-palette(mat.$red-palette);
+$TsComponentsDocs-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $TsComponentsDocs-primary,
+      accent: $TsComponentsDocs-accent,
+      warn: $TsComponentsDocs-warn,
+    ),
+
+    typography: $typography-config,
+    density: 0,
+  )
+);
+
+@include mat.typography-hierarchy($typography-config);
+@include mat.all-component-themes($TsComponentsDocs-theme);
+@include mat.form-field-density(-5);
+@include mat.icon-density(-3);
+@include mat.icon-button-density(-2);
+.mat-mdc-form-field {
+  .mdc-icon-button {
+    mat-icon {
+      transform: scale(0.8);
+    }
+  }
+  &.mat-form-field-appearance-fill {
+    @include mat.form-field-density(2);
+  }
+}
+.large-btn {
+  ts-button {
+    @include mat.icon-density(-5);
+    @include mat.icon-button-density(5);
+  }
+}
+.small-btn {
+  ts-button {
+    @include mat.icon-density(-5);
+    @include mat.icon-button-density(-5);
+  }
+}
